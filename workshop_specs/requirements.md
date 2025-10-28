@@ -1,40 +1,40 @@
-# Requirements Document
+# 요구사항 문서
 
-## Introduction
+## 소개
 
-This document outlines the requirements for Q-Social, a simple social chat application designed for a 2-hour workshop. The application allows users to post short messages and view them in a live feed. The system emphasizes simplicity with anonymous posting, basic styling, and straightforward functionality to demonstrate spec-driven development principles without overwhelming technical complexity.
+이 문서는 2시간 워크샵을 위해 설계된 간단한 소셜 채팅 애플리케이션인 Q-Social의 요구사항을 설명합니다. 이 애플리케이션은 사용자가 짧은 메시지를 게시하고 실시간 피드에서 볼 수 있도록 합니다. 시스템은 익명 게시, 기본 스타일링, 간단한 기능을 통해 복잡한 기술적 요소 없이 스펙 기반 개발 원칙을 보여주는 것을 강조합니다.
 
-## Requirements
+## 요구사항
 
-### Requirement 1
+### 요구사항 1
 
-**User Story:** As a user, I want to post short messages, so that I can share thoughts with others in the chat.
+**사용자 스토리:** 사용자로서, 짧은 메시지를 게시하여 채팅에서 다른 사람들과 생각을 공유하고 싶습니다.
 
-#### Acceptance Criteria
+#### 수락 기준
 
-1. WHEN a user types in the message input field THEN the system SHALL accept text up to 280 characters
-2. WHEN a user clicks the "Post" button THEN the system SHALL save the message and display it in the feed
-3. WHEN a message is posted THEN the system SHALL clear the input field
-4. IF a user tries to post an empty message THEN the system SHALL prevent submission
+1. 사용자가 메시지 입력 필드에 입력할 때 시스템은 최대 280자까지 텍스트를 허용해야 합니다
+2. 사용자가 "게시" 버튼을 클릭할 때 시스템은 메시지를 저장하고 피드에 표시해야 합니다
+3. 메시지가 게시될 때 시스템은 입력 필드를 지워야 합니다
+4. 사용자가 빈 메시지를 게시하려고 할 때 시스템은 제출을 방지해야 합니다
 
-### Requirement 2
+### 요구사항 2
 
-**User Story:** As a user, I want to see all messages in a feed, so that I can read what others have posted.
+**사용자 스토리:** 사용자로서, 피드에서 모든 메시지를 보고 싶어서 다른 사람들이 게시한 내용을 읽을 수 있습니다.
 
-#### Acceptance Criteria
+#### 수락 기준
 
-1. WHEN the page loads THEN the system SHALL display all messages with newest at the top
-2. WHEN a new message is posted THEN the system SHALL add it to the top of the feed
-3. WHEN displaying messages THEN the system SHALL show the message text and a timestamp
-4. WHEN there are no messages THEN the system SHALL show "No messages yet"
+1. 페이지가 로드될 때 시스템은 최신 메시지가 맨 위에 오도록 모든 메시지를 표시해야 합니다
+2. 새 메시지가 게시될 때 시스템은 피드 맨 위에 추가해야 합니다
+3. 메시지를 표시할 때 시스템은 메시지 텍스트와 타임스탬프를 보여줘야 합니다
+4. 메시지가 없을 때 시스템은 "아직 메시지가 없습니다"를 표시해야 합니다
 
-### Requirement 3
+### 요구사항 3
 
-**User Story:** As a developer, I want a simple backend API, so that the frontend can store and retrieve messages.
+**사용자 스토리:** 개발자로서, 프론트엔드가 메시지를 저장하고 검색할 수 있도록 간단한 백엔드 API를 원합니다.
 
-#### Acceptance Criteria
+#### 수락 기준
 
-1. WHEN the API receives a POST to /api/messages THEN the system SHALL save the message to a database
-2. WHEN the API receives a GET to /api/messages THEN the system SHALL return all messages in JSON format
-3. WHEN the application starts THEN the system SHALL create a SQLite database if it doesn't exist
-4. WHEN API calls are made THEN the system SHALL handle basic errors gracefully
+1. API가 /api/messages에 POST 요청을 받을 때 시스템은 메시지를 데이터베이스에 저장해야 합니다
+2. API가 /api/messages에 GET 요청을 받을 때 시스템은 모든 메시지를 JSON 형식으로 반환해야 합니다
+3. 애플리케이션이 시작될 때 시스템은 SQLite 데이터베이스가 존재하지 않으면 생성해야 합니다
+4. API 호출이 이루어질 때 시스템은 기본적인 오류를 우아하게 처리해야 합니다
